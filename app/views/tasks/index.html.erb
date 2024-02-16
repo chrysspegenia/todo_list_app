@@ -2,8 +2,7 @@
   <h1>To Do List</h1>
   <%= link_to "Add Task", new_task_path, class: "add-task-btn shadow" %>
 </div>
-
-<!-- <p style="color: green"><%= notice %></p> -->
+<p style="color: green"><%= notice %></p>
 
 <table class="shadow task-table">
   <thead>
@@ -22,7 +21,12 @@
         <td><%= link_to "Show", task , class: "task-btn shadow"  %></td>
         <td><%= link_to "Edit", edit_task_path(task), class: "shadow task-btn"  %></td>
         <td><%= link_to "Delete", task, method: :delete, data: {confirm: "Are you sure?" }, class: "shadow task-btn"  %></td>
-        <td><%= button_to "Mark as Completed", task, method: :patch, params: { task: {completed: true }}, class: "shadow task-btn"  %>
+        <td><%= button_to task.completed ? 'Mark as Ongoing' : 'Mark as Completed', 
+                          complete_task_path(task), 
+                          method: :patch, 
+                          params: { task: {completed: !task.completed }}, 
+                          class: "shadow task-btn"  
+                          %>
       </tr>
     <% end %>
   </tbody>
