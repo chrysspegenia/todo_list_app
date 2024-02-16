@@ -81,3 +81,7 @@
 .task-ongoing {
   background-color: #37cef4;
 }
+
+.line-through {
+  text-decoration: line-through;
+}
