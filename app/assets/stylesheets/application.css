@@ -22,3 +22,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.navigation-link {
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation-link:hover {
+  color: #ff7b02;
+}
