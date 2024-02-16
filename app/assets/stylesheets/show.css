@@ -1,0 +1,26 @@
+.show-btn-container {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.delete-btn {
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff7b02;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset -8px -8px 15px rgba(0, 0, 0, 0.1),
+    inset 8px 8px 8px rgba(255, 255, 255, 0.8);
+}
+
+.delete-btn:hover {
+  background-color: #ee0b0b;
+  cursor: pointer;
+}

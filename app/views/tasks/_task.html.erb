@@ -1,12 +1,14 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Name:</strong>
+<div id="<%= dom_id task %>" class="show-container shadow">
+    
+  <strong class="task-label">Task</strong>
+
+  <div class="shadow task">
     <%= task.name %>
-  </p>
+  </div>
 
   <p>
-    <strong>Completed:</strong>
-    <%= task.completed %>
+    <strong>Progress:</strong>
+    <span class="<%= task.completed ? 'task-complete' : 'task-ongoing'%>"><%= task.completed ? "Completed" : "Ongoing" %></span>
   </p>
 
 </div>

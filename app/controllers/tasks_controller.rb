@@ -13,10 +13,12 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @button_text = "Add task"
   end
 
   # GET /tasks/1/edit
   def edit
+    @button_text = "Update"
   end
 
   # POST /tasks or /tasks.json

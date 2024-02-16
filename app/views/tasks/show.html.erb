@@ -2,9 +2,10 @@
 
 <%= render @task %>
 
-<div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
-  <%= link_to "Back to tasks", tasks_path %>
-
-  <%= button_to "Destroy this task", @task, method: :delete %>
+<div class="show-btn-container">
+  <%= button_to "Delete this task", @task, method: :delete, class: "shadow delete-btn" %>
+  <div>
+    <%= link_to "Edit this task", edit_task_path(@task), class: "navigation-link" %> |
+    <%= link_to "Back to tasks", tasks_path, class: "navigation-link" %>
+  </div>
 </div>
