@@ -21,13 +21,13 @@
         <td><span class="<%= task.completed ? 'task-complete' : 'task-ongoing'%>"><%= task.completed ? "Completed" : "Ongoing" %></span></td>
         <td><%= link_to "Show", task , class: "task-btn shadow"  %></td>
         <td><%= link_to "Edit", edit_task_path(task), class: "shadow task-btn"  %></td>
-        <td><%= link_to "Delete", task, method: :delete, data: {confirm: "Are you sure?" }, class: "shadow task-btn"  %></td>
         <td><%= button_to task.completed ? 'Mark as Ongoing' : 'Mark as Completed', 
                           complete_task_path(task), 
                           method: :patch, 
                           params: { task: {completed: !task.completed }}, 
                           class: "shadow task-btn"  
                           %>
+        <td><%= button_to "Delete", task, method: :delete, data: {confirm: "Are you sure?" }, class: "shadow delete-btn"  %></td>
       </tr>
     <% end %>
   </tbody>
