@@ -15,7 +15,7 @@
  */
 
 .main-container {
-  padding-top: 5em;
+  padding: 5em 0;
   background-color: #e0e5ec;
   display: flex;
   flex-direction: column;
