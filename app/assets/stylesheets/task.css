@@ -1,6 +1,6 @@
 .show-container {
-  padding: 10px 20px;
-  height: 20vh;
+  padding: 20px;
+  /* height: 20vh; */
   min-width: 30vw;
   border-radius: 15px;
   display: flex;
@@ -14,9 +14,35 @@
 
 .task-label {
   font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .task {
   padding: 8px 16px;
   border-radius: 10px;
+}
+
+.task-description-input {
+  min-height: 20vh;
+  min-width: 20vw;
+  font-size: 1rem;
+  padding: 20px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: inset -8px -8px 15px rgba(255, 255, 255, 0.8),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-description-input::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-description-input::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 5px;
+}
+
+.task-description-input::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }
