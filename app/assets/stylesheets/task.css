@@ -1,6 +1,5 @@
 .show-container {
   padding: 20px;
-  /* height: 20vh; */
   min-width: 30vw;
   border-radius: 15px;
   display: flex;
@@ -8,8 +7,6 @@
   align-items: center;
   justify-content: space-around;
   font-size: 1.5rem;
-  box-shadow: inset -8px -8px 15px rgba(255, 255, 255, 0.8),
-    inset 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .task-label {
