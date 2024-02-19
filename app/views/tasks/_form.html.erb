@@ -16,10 +16,12 @@
     <%= form.text_field :name, placeholder: "Enter your task here", class: "text-field" %>
 
 
-  <div class="checkbox-container">
-    <%= form.label :completed, style: "display: block" %>
-    <%= form.check_box :completed, class: "checkbox"  %>
-  </div>
+    <div class="checkbox-container">
+      <%= form.label :completed, style: "display: block" %>
+      <%= form.check_box :completed, class: "checkbox"  %>
+    </div>
+
+    <div><%= form.text_area :task_description, placeholder: "Feel free to write notes for your task here.", class: "task-description-input" %></div>
     
     <div>
       <%= form.submit @button_text, class: "task-btn shadow" %>

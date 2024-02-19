@@ -11,4 +11,8 @@
     <span class="<%= task.completed ? 'task-complete' : 'task-ongoing'%>"><%= task.completed ? "Completed" : "Ongoing" %></span>
   </p>
 
+  <div class="task-description-display">
+    <textarea class="task-description-input" placeholder="No Notes for this task." disabled readonly><%= task.task_description %></textarea>
+  </div>
+
 </div>
