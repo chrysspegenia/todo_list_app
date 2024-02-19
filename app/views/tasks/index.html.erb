@@ -1,34 +1,50 @@
 <div class="shadow index-header">
-  <h1>To Do List</h1>
-  <%= link_to "Add Task", new_task_path, class: "add-task-btn shadow" %>
+  <h1>My To Do List</h1>
+  <% if @tasks.length > 0 %>
+    <%= link_to "Add Task", new_task_path, class: "add-task-btn shadow" %>
+  <%end%>
 </div>
 
 <!-- <p style="color: green"><%= notice %></p> -->
 
-<table class="shadow task-table">
-  <thead>
-    <tr>
-      <th>Task</th>
-      <th>Progress</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<% if @tasks.length < 1 %>
 
-  <tbody>
-    <% @tasks.each do |task| %>
+  <!--This element will be displayed if there are no more tasks-->
+  <div class="no-task-notif shadow">
+    <div>You have no tasks.</div>
+    <div>Click this 
+      <span><%= link_to "Add Task", new_task_path, class: "add-task-btn shadow" %></span> 
+      button to create your list.</div>
+  </div>
+
+<% else %>
+
+  <table class="shadow task-table">
+    <thead>
       <tr>
-        <td class="task-name <%= task.completed ? 'line-through' : nil %>"><%= task.name %></td>
-        <td><span class="<%= task.completed ? 'task-complete' : 'task-ongoing'%>"><%= task.completed ? "Completed" : "Ongoing" %></span></td>
-        <td><%= link_to "Show", task , class: "task-btn shadow"  %></td>
-        <td><%= link_to "Edit", edit_task_path(task), class: "shadow task-btn"  %></td>
-        <td><%= button_to task.completed ? 'Mark as Ongoing' : 'Mark as Completed', 
-                          complete_task_path(task), 
-                          method: :patch, 
-                          params: { task: {completed: !task.completed }}, 
-                          class: "shadow task-btn"  
-                          %>
-        <td><%= button_to "Delete", task, method: :delete, data: {confirm: "Are you sure?" }, class: "shadow delete-btn"  %></td>
+        <th>Task</th>
+        <th>Progress</th>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @tasks.each do |task| %>
+            <tr>
+              <td class="task-name <%= task.completed ? 'line-through' : nil %>"><%= task.name %></td>
+              <td><span class="<%= task.completed ? 'task-complete' : 'task-ongoing'%>"><%= task.completed ? "Completed" : "Ongoing" %></span></td>
+              <td><%= link_to "Show", task , class: "task-btn shadow"  %></td>
+              <td><%= link_to "Edit", edit_task_path(task), class: "shadow task-btn"  %></td>
+              <td><%= button_to task.completed ? 'Mark as Ongoing' : 'Mark as Completed', 
+                                complete_task_path(task), 
+                                method: :patch, 
+                                params: { task: {completed: !task.completed }}, 
+                                class: "shadow task-btn"  
+                                %>
+              <td><%= button_to "Delete", task, method: :delete, data: {confirm: "Are you sure?" }, class: "shadow delete-btn"  %></td>
+            </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>

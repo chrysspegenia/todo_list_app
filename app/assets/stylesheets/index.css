@@ -95,3 +95,14 @@
 td:nth-child(2) {
   width: 18%;
 }
+
+.no-task-notif {
+  font-size: 2rem;
+  min-height: 10vh;
+  padding: 1.5em;
+  border-radius: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
